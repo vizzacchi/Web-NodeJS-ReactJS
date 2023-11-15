@@ -21,7 +21,7 @@ export const getTask = async (request: Request, response: Response) => {
     return response.json(task);
 }
 
-export const updateTask = async (request: Request, response: Response) => {
+export const editTask = async (request: Request, response: Response) => {
     const {id} = request.params;
     const task = await repository.update(id, request.body);
     if(task.affected == 1) {
